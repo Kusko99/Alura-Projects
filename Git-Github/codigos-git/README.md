@@ -71,8 +71,17 @@ git commit .
 
 --> É necessário fazer o Push para enviar todos os commits feitos na sua máquina local para o github
 
-*Para fazer o push:
+* Para fazer o push:
 ```
 git push origin main
 ```
 --> Isto irá enviar seus commits para o main branch
+
+### Buscando uma versão antiga
+
+* Na página do github a um relógio que possui todo o histórico de commits
+* Copie o código Hash referente a versão que você querer voltar
+* Utilize o comando:
+```
+git restore --source (Hash Code da versão) (. para tudo, nome do arquivo para apenas um arquivo)
+```
