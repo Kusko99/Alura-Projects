@@ -101,3 +101,17 @@ git switch (nome da Branch)
 git commit .
 git push origin (nome da Branch)
 ```
+* Para verificar em qual Branch você está trabalhando:
+```
+git branch
+```
+
+### Merge
+* Para juntar uma branch com a main
+```
+git merge (nome da branch para juntar)
+```
+* Depois faça o push com a main
+```
+git push origin main
+```
