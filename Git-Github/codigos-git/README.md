@@ -64,7 +64,7 @@ git commit (nome do arquivo)
 ```
 * Para comitar o projeto inteiro:
 ```
-git commit *
+git commit .
 ```
 
 ### Push
