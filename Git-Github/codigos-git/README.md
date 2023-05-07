@@ -10,3 +10,12 @@
 * Vá em Controle de Código Fonte 
 * Você pode no campo superior escrever uma mensagem do seu Commit
 * Faça o Commit usando o Confirmar e enviar o por Push 
+
+### Para adcionar um calaborado:
+
+* Basta ir em configurações
+* Vá em colaboradores
+* Adicone um colaborador
+* A outra pessoa irá receber um convite
+
+-- Agora irá poder editar e commitar no seu repositório
