@@ -66,7 +66,7 @@ git commit (nome do arquivo)
 ```
 git commit *
 ```
-
+--> Isso irá abrir um arquivo para você escrever sua mensagem de commit, basta escreve a mensagem no topo e fechar o arquivo no editor
 ### Push
 
 --> É necessário fazer o Push para enviar todos os commits feitos na sua máquina local para o github
