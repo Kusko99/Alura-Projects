@@ -7,6 +7,6 @@
     ```
 ### Para fazer o Commit & Push utilizando o github.dev: 
  
-* Vá em Controle de Código Fonte &nbsp;
+* Vá em Controle de Código Fonte 
 * Você pode no campo superior escrever uma mensagem do seu Commit
 * Faça o Commit usando o Confirmar e enviar o por Push 
