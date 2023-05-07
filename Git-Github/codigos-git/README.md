@@ -107,11 +107,15 @@ git branch
 ```
 
 ### Merge
-* Para juntar uma branch com a main
+* Altere para o branch que você querer que junte com outra
+```
+git switch (nome da Branch)
+```
+* Para juntar duas branch
 ```
 git merge (nome da branch para juntar)
 ```
-* Depois faça o push com a main
+* Depois faça o push 
 ```
-git push origin main
+git push origin (nome da Branch)
 ```
