@@ -60,7 +60,7 @@ git status
 ### Commit
 * Para Fazer o commit do projeto:
 ```
-git commit (nome do arquivo)
+git commit (nome do arquivo) -m "Frase de Commit"
 ```
 * Para comitar o projeto inteiro:
 ```
