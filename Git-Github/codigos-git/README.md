@@ -85,3 +85,14 @@ git push origin main
 ```
 git restore --source (Hash Code da versão) (. para tudo, nome do arquivo para apenas um arquivo)
 ```
+
+### Criando uma Branch
+* Para criar uma nova Branch:
+```
+git checkout -b (nome da Branch)
+```
+* Após criar uma nova Branch ele automaticamente muda para nova Branch
+* Para retornar para Main ou para outra Branch
+```
+git switch (nome da Branch)
+```
