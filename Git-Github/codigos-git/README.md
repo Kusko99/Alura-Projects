@@ -19,3 +19,17 @@
 * A outra pessoa irá receber um convite
 
 -- Agora irá poder editar e commitar no seu repositório
+
+### Clonar um Repositório
+
+* Vá na opção codigo no Github e copie o link HTTPS .git
+* Abra o seu terminal
+* Utlize o seguinte comando para mudar a pasta onde o repositório será clonado
+ ```
+ cd "caminho da pasta onde será clonado"
+ ```
+ * Utilize o seguinte comando para clonar o repositório na pasta que você escolheu anteriorimente
+ ```
+ git clone (link HTTPS .git do repositório copiado do Github)
+ ```
+ 
