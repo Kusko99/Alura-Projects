@@ -51,4 +51,28 @@ git log --oneline
 git pull (link HTTPS .git do repositório copiado do Github)
 ```
 
-### Committ, Push e Status
+### Status
+
+* Para verificar o status do projeto:
+```
+git status
+```
+### Commit
+* Para Fazer o commit do projeto:
+```
+git commit (nome do arquivo)
+```
+* Para comitar o projeto inteiro:
+```
+git commit *
+```
+
+### Push
+
+--> É necessário fazer o Push para enviar todos os commits feitos na sua máquina local para o github
+
+*Para fazer o push:
+```
+git push origin main
+```
+--> Isto irá enviar seus commits para o main branch
