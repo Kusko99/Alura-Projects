@@ -32,4 +32,23 @@
  ```
  git clone (link HTTPS .git do repositório copiado do Github)
  ```
- 
+* Para vizualizar o histórico de todas as alterações feitas utlize no cmd o comando:
+```
+git log (Para sair aperte o "Q")
+```
+* Para vizualizar o histórico de alterações de forma resumido utilize:
+
+```
+git log --oneline
+```
+
+### Atualizar o Repositório local
+
+* Busque novamente o link HTTPS .git
+* Utilize o seguinte comando
+
+```
+git pull (link HTTPS .git do repositório copiado do Github)
+```
+
+### Committ, Push e Status
