@@ -96,3 +96,8 @@ git checkout -b (nome da Branch)
 ```
 git switch (nome da Branch)
 ```
+* Para fazer o commit e o Push na branch nova basta:
+```
+git commit .
+git push origin (nome da Branch)
+```
