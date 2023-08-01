@@ -1,0 +1,1 @@
+const texto = document.querySelector("#texto").innerText = "O verão está chegando";
