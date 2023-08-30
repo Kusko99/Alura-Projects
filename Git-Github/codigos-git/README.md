@@ -42,6 +42,12 @@ git log (Para sair aperte o "Q")
 git log --oneline
 ```
 
+* Para clonar uma pasta e alterar seu nome
+
+```
+ git clone (link HTTPS .git do repositório copiado do Github) (nome da pasta)
+```
+
 ### Atualizar o Repositório local
 
 * Busque novamente o link HTTPS .git
@@ -118,4 +124,10 @@ git merge (nome da branch para juntar)
 * Depois faça o push 
 ```
 git push origin (nome da Branch)
+```
+
+###Lista
+*Para listar de onde veio o repositório e para será feito o Push do codígo
+```
+git remote -v
 ```
