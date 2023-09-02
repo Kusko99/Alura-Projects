@@ -61,6 +61,12 @@ class Fruta {
 
   Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita,
       {this.isMadura} /*isMadura é um valor opcional, por está entre chaves */);
+
+  estaMadura(int diasParaMadura) {
+    isMadura = diasDesdeColheita >= diasParaMadura;
+    print(
+        "A sua $nome foi colhida a $diasDesdeColheita dias, e precisa de $diasParaMadura. Ela está madura? $isMadura");
+  }
 }
 
 void main() {
@@ -88,4 +94,8 @@ void main() {
   print(fruta01.toString());
   print(fruta02);
   print(fruta02.toString());
+
+  fruta01.estaMadura(30);
+  fruta02.estaMadura(60);
+  print(fruta01.estaMadura(30));
 }
