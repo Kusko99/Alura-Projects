@@ -5,112 +5,155 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Tarefas'),
+          leading: Container(),
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Tarefa'),
-            backgroundColor: Colors.amber,
-          ),
-          body: ListView(
-            children: const [
-              Task("Gabriel"),
-              Task("Eduardo"),
-              Task("Daniel"),
-              Task("André"),
-              Task("Gatina"),
-              Task("Bia"),
-              Task("Lucas"),
-            ],
-          ),
-          floatingActionButton: FloatingActionButton(onPressed: () {}),
-        ));
+        body: ListView(
+          children: const [
+            Padding(
+              padding: EdgeInsets.only(top: 8),
+              child: Tasks(
+                'Estudar Flutter',
+              ),
+            ),
+            Tasks(
+              'Andar de Bike',
+            ),
+            Tasks(
+              'Ler',
+            ),
+            Tasks(
+              'Meditar',
+            ),
+            Tasks(
+              'Jogar',
+            )
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+        ),
+      ),
+    );
   }
 }
 
-class Task extends StatefulWidget {
+class Tasks extends StatefulWidget {
   final String nome;
-  const Task(this.nome, {Key? key}) : super(key: key);
+  const Tasks(this.nome, {Key? key}) : super(key: key);
 
   @override
-  State<Task> createState() => _TaskState();
+  State<Tasks> createState() => _TasksState();
 }
 
-class _TaskState extends State<Task> {
-  double nivel = 0;
+class _TasksState extends State<Tasks> {
+  int nivel = 0;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        color: Colors.black,
-        child: Stack(
-          children: [
-            Container(
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4),
               color: Colors.blue,
-              height: 140,
             ),
-            Column(
-              children: [
-                Container(
+            height: 140,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
                   color: Colors.white,
-                  height: 100,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        color: Colors.black26,
-                        width: 72,
-                        height: 100,
+                ),
+                height: 100,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 72,
+                      height: 100,
+                      color: Colors.black26,
+                    ),
+                    SizedBox(
+                      width: 200,
+                      child: Text(
+                        widget.nome,
+                        style: const TextStyle(
+                            fontSize: 24, overflow: TextOverflow.ellipsis),
                       ),
-                      SizedBox(
-                        width: 200,
-                        child: Text(
-                          widget.nome,
-                          style: const TextStyle(
-                              fontSize: 24, overflow: TextOverflow.ellipsis),
-                        ),
-                      ),
-                      ElevatedButton(
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: SizedBox(
+                        height: 52,
+                        width: 52,
+                        child: ElevatedButton(
                           onPressed: () {
                             setState(() {
                               nivel++;
                             });
                           },
-                          child: const Icon(Icons.arrow_drop_up))
-                    ],
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        width: 200,
-                        child: LinearProgressIndicator(
-                          color: Colors.white,
-                          value: nivel / 10,
+                          child: const Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Icon(Icons.arrow_drop_up),
+                              Text(
+                                'UP',
+                                style: TextStyle(fontSize: 12),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Text(
-                      'Nível $nivel',
-                      style: const TextStyle(color: Colors.white, fontSize: 20),
-                    ),
+                    )
                   ],
-                )
-              ],
-            ),
-          ],
-        ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 8,
+                    ),
+                    child: SizedBox(
+                      width: 200,
+                      child: LinearProgressIndicator(
+                        color: Colors.white,
+                        value: nivel / 10,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      'Nivel: $nivel',
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
