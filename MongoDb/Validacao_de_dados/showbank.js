@@ -181,7 +181,11 @@ db.runCommand({collMod: "clientes",
                 }
             }
         }
-    }
+    },
+    validationLevel : "moderate",
+    validationAction : "warn",
+    //Para passar as regras da validação
+    //bypassDocumentValidation : true,
 })
 
 db.runCommand({collMod : "contas",
@@ -216,7 +220,98 @@ db.runCommand({collMod : "contas",
                 }
              }
         }
-    }
+    },
+    validationLevel : "moderate",
+    validationAction : "warn",
+    //Para passar as regras da validação
+    //bypassDocumentValidation : true,
 })
+
+db.contas.updateOne({
+    "cpf" : "208.862.381-70"
+},{$set : {"valor" : 1411.00}})
+
+
+//Colocando o formato da coleção clientes em um variavel
+//Depois demostrando que é possivel consultar os que respeitam as regras, os que não respeitam e deleta-los
+
+let clientes = 
+ {
+   $jsonSchema:{
+      bsonType: "object",
+      "additionalProperties": false,
+      required:["_id", "nome", "cpf","status_civil","data_nascimento","endereco", "genero", "profissao"],
+      properties:{
+           _id:{
+              bsonType: "objectId",
+              description: "informe corretamente o endereço do cliente" 
+          },
+          nome:{
+              bsonType: "string",
+              maxLength:150,
+              description: "informe corretamente o nome do cliente"
+          },
+          cpf:{
+             bsonType: "string",
+              minLength:14,
+              maxLength:14,
+             description: "informe corretamente o cpf do cliente" 
+          },
+          status_civil:{
+              bsonType: "string",
+              enum:["Solteiro(a)", "Casado(a)", "Separado(a)", "Divorciado(a)", "Viúvo(a)" ],
+              description: "informe corretamente o status civil do cliente" 
+          },
+          data_nascimento:{
+             bsonType: ["string", "null"],
+             description: "informe corretamente a data de nascimento do cliente"  
+          },
+          endereco:{
+              bsonType: "string",
+              description: "informe corretamente o endereço do cliente" 
+          },
+           genero:{
+              bsonType: "string",
+              description: "informe corretamente o genero do cliente" 
+          },
+           profissao:{
+              bsonType: "string",
+              description: "informe corretamente o profissão do cliente" 
+          }
+      }
+
+  }
+ } 
+
+db.clientes.find(clientes)
+
+db.clientes.find({$nor: [clientes]})
+
+db.clientes.deleteOne({$nor: [clientes]})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
