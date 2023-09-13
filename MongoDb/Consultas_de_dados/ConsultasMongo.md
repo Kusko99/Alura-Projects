@@ -62,6 +62,7 @@ db.clientes.find({ idade: { $gt: 26 } }, { nome: 1, email: 1, _id: 0 });
 * e/and: $and
 * ou/or: $or
 * diferente/not: $not
+* diferente de: $ne
 
 #####Exemplos:
 
@@ -420,3 +421,175 @@ db.contas.aggregate([{
     }
 }])
 ```
+
+##### Operadores de Strings
+
+* $concat -> serve para concatenar strings
+* $split -> serve para dividir uma string
+* $toLower -> coloca tudo em minisculas
+* $toUpper -> coloca tudo em maisculas
+* $toString -> converte um valor para String
+
+```
+db.clientes.aggregate([{
+   $project: {
+       descricao : {
+         $concat: ["$nome", " - ","$cpf"]
+       }
+   }
+}])
+```
+
+
+```
+db.clientes.aggregate([{
+    $project:{
+            descriçao:{
+                $split:["$nome"," "]
+                }
+        }
+}])
+```
+
+```
+db.clientes.aggregate([{
+    $project:{
+            descriçao:{
+                $toLower: "$nome"
+                }
+        }
+}])
+```
+
+```
+db.clientes.aggregate([{
+    $project:{
+            descriçao:{
+                $toUpper: "$nome"
+                }
+        }
+}])
+```
+
+```
+db.contas.aggregate({
+    $project: {
+        valor:{
+            $toString: "$valor"
+        }
+    }
+})
+```
+
+```
+db.contas.aggregate({
+    $project:{
+            descrição:{
+                    $concat:[
+                             "O cliente de CPF ", "$cpf", " possui o valor de ", {$toString:"$valor"}, " na", "tipo"
+                                 
+                                ]
+                }
+      }
+})
+```
+
+##### Operadores acumuladores
+
+* $avg -> retorna a média
+* $max -> retorna o valor máximo
+* $min -> retorna o valor minímo
+* $sum -> reliza a soma de um campo
+
+```
+db.contas.aggregate({
+    $group:{
+            _id:"$tipo",
+                media:{
+                    $avg:"$valor"
+})
+```
+
+```
+db.contas.aggregate({
+    $group:{
+            _id:"$tipo",
+                valorMaximo:{
+                    $max:"$valor"
+                }
+        }
+})
+```
+
+```
+db.contas.aggregate({
+    $group:{
+            _id:"$tipo",
+                valorMinimo:{
+                    $min:"$valor"
+                }
+        }
+})
+```
+
+```
+db.contas.aggregate({
+    $group:{
+            _id:"$tipo",
+                Total:{
+                    $sum:"$valor"
+                }
+        }
+})
+```
+
+##### Operadores condicionais
+
+* $cond: avalia uma condição e retorna se é verdadeiro ou falso
+* $ifNull: se o valor for igual a vazio ele retorna uma mensagem dentro do campo na consulta
+* $switch : é um switch case
+
+```
+db.contas.aggregate([{
+   $project:{
+         cpf:1,
+             tipo:1,
+             valor:1,
+             valores:{
+                 $cond:[{$gte:["$valor",8000]}, "VERDADEIRO", "FALSO"]
+             }
+        }
+}])
+```
+
+```
+db.contas.aggregate([{
+    $project:{
+            valor:{
+                    $ifNull:["$valor", "Não Especificado"]
+                }
+       }
+}])
+```
+
+```
+db.contas.aggregate([{
+    $project:{
+            valor:1,
+                condição:{
+                    $switch:{
+                            branches:[{
+                                    case:{$lte:["$valor",3000]}, then:"valor abaixo do esperado"},{
+                                        case:{$and:[{$gt:["$valor",3000]},{$lte:["$valor",6000]}]}, then:"valor na media"}}
+                                ],
+                                default:"valor acima do esperado"
+                        }
+                }
+        }
+}])
+```
+
+##### Operadores de data
+* $year -> retorna o ano
+* $month -> retorna o mês
+* $datOfWeek -> retorna o dia da semana
