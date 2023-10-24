@@ -29,3 +29,20 @@ Ocutar/Abri Terminal
 
 Variaveis de ambiente
 --> pip install python-dotenv
+
+Criando um app Django (isto serve para as funcionalidades)
+--> python manage.py startapp nomeApp
+
+Na aplicação
+
+* Views é responsável é cuidar do que será exibido em cada pagina, o que a gente renderiza
+
+No projeto
+
+* As rotas da aplicação são feitas no arquivo urls.py
+* É possível criar um arquivo urls.py na aplicação e importando include 
+de django.urls adicionar essas rotas no arquivo urls.py do projeto
+
+Para carregar os arquivos static
+
+--> python manage.py collectstatic
