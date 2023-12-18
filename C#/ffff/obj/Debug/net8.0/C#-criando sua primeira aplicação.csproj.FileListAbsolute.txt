@@ -1,0 +1,15 @@
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\bin\Debug\net8.0\C#-criando sua primeira aplicação.exe
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\bin\Debug\net8.0\C#-criando sua primeira aplicação.deps.json
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\bin\Debug\net8.0\C#-criando sua primeira aplicação.runtimeconfig.json
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\bin\Debug\net8.0\C#-criando sua primeira aplicação.dll
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\bin\Debug\net8.0\C#-criando sua primeira aplicação.pdb
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\C#-criando sua primeira aplicação.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\C#-criando sua primeira aplicação.AssemblyInfoInputs.cache
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\C#-criando sua primeira aplicação.AssemblyInfo.cs
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\C#-criando sua primeira aplicação.csproj.CoreCompileInputs.cache
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\C#-criando sua primeira aplicação.sourcelink.json
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\C#-criando sua primeira aplicação.dll
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\refint\C#-criando sua primeira aplicação.dll
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\C#-criando sua primeira aplicação.pdb
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\C#-criando sua primeira aplicação.genruntimeconfig.cache
+C:\Users\ferna\OneDrive\Ambiente de Trabalho\Alura-Projects\C#\C#-criando sua primeira aplicação\obj\Debug\net8.0\ref\C#-criando sua primeira aplicação.dll
